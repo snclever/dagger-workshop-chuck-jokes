@@ -1,8 +1,6 @@
 package com.hufsm.chuckjokes;
 
-import com.hufsm.chuckjokes.domain.ApiModule;
 import com.hufsm.chuckjokes.domain.DomainModule;
-import com.hufsm.chuckjokes.ui.ActivityComponent;
 import com.hufsm.chuckjokes.ui.UiModule;
 
 import javax.inject.Singleton;
@@ -15,11 +13,11 @@ import dagger.Component;
 @Singleton
 @Component(modules = {
         DomainModule.class,
-        ApiModule.class,
+        TestApiModule.class,
         UiModule.class
 })
-public interface AppComponent {
+public interface TestAppComponent extends AppComponent {
 
-    ActivityComponent.Builder getActivityComponentBuilder();
+    TestQuoteApi testQuoteApi();
 
 }
